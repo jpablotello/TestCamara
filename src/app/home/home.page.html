@@ -1,14 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header background-color="primary">
+    <ion-toolbar color="primary" no-border>
+        <ion-title>
+            Test Camara Ver 0.2a
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+    <ion-grid style="background-color:height: 100%; display: flex; flex-flow: column;">
+        <ion-row class="ion-justify-content-center">
+            <button class="btn btn-primary" ion-button block (click)="getPicture()">Sacar Foto</button>
+        </ion-row>
+        <div style="height: 100%">
+            <label *ngIf="japish">{{ mensajeFoto }}</label>
+            <img [src]="image" *ngIf="image" />
+        </div>
+        <div *ngIf="japish">
+            <label>Posicion </label>
+            <label>Lat : {{ gpsPositionLat }} </label>
+            <label>Long : {{ gpsPositionLong }} </label>
+        </div>
+    </ion-grid>
 </ion-content>
